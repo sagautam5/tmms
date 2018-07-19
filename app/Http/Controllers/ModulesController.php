@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Module;
+use App\Faculty;
+
 use Illuminate\Http\Request;
 
 use App\Repositories\Repository;
@@ -32,9 +34,10 @@ class ModulesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($faculty_id)
     {
-        //
+        $faculty = Faculty::find($faculty_id);
+        return view('module.create',compact('faculty'));
     }
 
     /**
@@ -45,7 +48,14 @@ class ModulesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        if($this->model->create($request->all()))
+        {
+            return redirect()->to('/faculties')->with('alert-success','Module added successfully !');
+        }
+        else
+        {
+            return redirect()->back()->with('alert-danger','Something went wrong !');
+        }
     }
 
     /**

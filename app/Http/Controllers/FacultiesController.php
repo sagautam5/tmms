@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Faculty;
 use Illuminate\Http\Request;
+use App\Http\Requests\FacultyRequest;
 
 use App\Repositories\Repository;
 
@@ -25,7 +26,8 @@ class FacultiesController extends Controller
     public function index()
     {
         // All Faculties
-        $faculties = $this->model->all();
+        $faculties = $this->model->with('modules')->get();
+
         return view('faculty.index',compact('faculties'));
     }
 
@@ -36,7 +38,7 @@ class FacultiesController extends Controller
      */
     public function create()
     {
-        //
+        return view('faculty.create');
     }
 
     /**
@@ -45,9 +47,19 @@ class FacultiesController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(FacultyRequest $request)
     {
-        //
+        // store new faculty to database
+        if($this->model->create($request->all()))
+        {
+            return redirect()->to('/faculties')->with('alert-success','Faculty added successfully !');
+        }
+
+        else
+        {
+            return redirect()->back()->with('alert-danger','Something went wrong !');
+        }
+
     }
 
     /**
@@ -60,6 +72,7 @@ class FacultiesController extends Controller
     {
         // Get Faculty
         $faculty = $this->model->show($id);
+        
         return view('faculty.show',compact('$faculty'));
     }
 
@@ -71,7 +84,10 @@ class FacultiesController extends Controller
      */
     public function edit($id)
     {
-        //
+        // Get Faculty
+        $faculty = $this->model->show($id);
+        
+        return view('faculty.edit',compact('faculty'));
     }
 
     /**
@@ -81,9 +97,18 @@ class FacultiesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+
+    public function update(FacultyRequest $request, $id)
     {
-        //
+         if($this->model->update($request->all(),$id))
+         {
+            return redirect()->to('/faculties')->with('alert-success','Faculty Updated successfully !');
+         }
+
+         else
+         {
+            return redirect()->back()->with('alert-danger','Something went wrong !');
+         }
     }
 
     /**

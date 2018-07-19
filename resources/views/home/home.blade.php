@@ -31,9 +31,4 @@
 
 @section('imports')
 @parent
-<script>
-	jQuery(document).ready(function($) {
-		$('.agentEdit').hide();
-	});
-</script>
 @endsection

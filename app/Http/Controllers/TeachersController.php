@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 Use App\Teacher;
+Use App\Faculty;
+Use App\Nationality;
+
 use Illuminate\Http\Request;
 
 use App\Repositories\Repository;
@@ -35,7 +38,10 @@ class TeachersController extends Controller
      */
     public function create()
     {
-        //
+        $faculties = Faculty::all();
+        $nationalities = Nationality::all();
+        
+        return view('teacher.create',compact('faculties','nationalities'));
     }
 
     /**

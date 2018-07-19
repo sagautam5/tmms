@@ -10,9 +10,19 @@ body {
   background: #fff;
   color: #666666;
 }
+.page-info{
+	text-align: center;
+}
+
+.main-title{
+	color: #fff;
+	text-align: left;
+	font-weight: 600;
+	font-size: 30px;
+}
 
 .main-menu{
-margin-top: 100px;
+	margin-top: 100px;
 }
 
 .main-menu .menu-item{
@@ -31,6 +41,19 @@ margin-top: 100px;
 	border: 1px solid #03C4EB;
 	transition: 0.3s;
 }
+
+.add-new{
+	padding: 10px;
+	margin: 15px;
+	background-color: #03C4EB;
+	color: #000;
+}
+
+.add-new:hover{
+	background-color: #fff;
+	border: 1px solid #03C4EB;
+}
+
 #footer {
   background: #111;
   padding: 10px 0;

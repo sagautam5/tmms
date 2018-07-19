@@ -20,13 +20,16 @@ Route::resource('faculties', 'FacultiesController', [
     'except' => ['show']
 ]);
 
-// Module
-Route::resource('modules', 'ModulesController', [
-    'except' => ['show']
-]);
 
 // Teacher
 Route::resource('teachers', 'TeachersController', [
     'except' => ['show']
 ]);
 
+// Module
+
+Route::group(['prefix'=>'faculties/{faculty_id}'], function(){
+	Route::resource('modules','ModulesController', [
+		'except' => ['show','intex']
+	]);
+});
