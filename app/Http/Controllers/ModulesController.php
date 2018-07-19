@@ -2,11 +2,21 @@
 
 namespace App\Http\Controllers;
 
-use App\Module;s
+use App\Module;
 use Illuminate\Http\Request;
+
+use App\Repositories\Repository;
 
 class ModulesController extends Controller
 {
+
+    protected $model;
+
+    public function __construct(Module $module){
+        // set the model
+       $this->model = new Repository($module);
+    }
+
     /**
      * Display a listing of the resource.
      *

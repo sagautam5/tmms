@@ -5,8 +5,18 @@ namespace App\Http\Controllers;
 Use App\Teacher;
 use Illuminate\Http\Request;
 
+use App\Repositories\Repository;
+
+
 class TeachersController extends Controller
 {
+    protected $model;
+
+    public function __construct(Teacher $teacher){
+        // set the model
+       $this->model = new Repository($teacher);
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +24,8 @@ class TeachersController extends Controller
      */
     public function index()
     {
-        //
+        // All Teachers 
+        $teachers = $this->model->all();
     }
 
     /**

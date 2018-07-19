@@ -5,8 +5,18 @@ namespace App\Http\Controllers;
 use App\Faculty;
 use Illuminate\Http\Request;
 
+use App\Repositories\Repository;
+
+
 class FacultiesController extends Controller
 {
+
+    protected $model;
+
+    public function __construct(Faculty $faculty){
+        // set the model
+       $this->model = new Repository($faculty);
+    }
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +24,9 @@ class FacultiesController extends Controller
      */
     public function index()
     {
-        //
+        // All Faculties
+        $faculties = $this->model->all();
+        return view('faculty.index',compact('faculties'));
     }
 
     /**
@@ -46,7 +58,9 @@ class FacultiesController extends Controller
      */
     public function show($id)
     {
-        //
+        // Get Faculty
+        $faculty = $this->model->show($id);
+        return view('faculty.show',compact('$faculty'));
     }
 
     /**
