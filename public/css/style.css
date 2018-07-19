@@ -1,0 +1,46 @@
+
+#header {
+  background: #111;
+  padding: 0px 0;
+  height: 70px;
+  color: #fff;
+}
+
+body {
+  background: #fff;
+  color: #666666;
+}
+
+.main-menu{
+margin-top: 100px;
+}
+
+.main-menu .menu-item{
+	padding: 30px;
+	background-color: #03C4EB;
+	margin: 30px;
+	font-weight: 600;
+	font-size: 22px;
+	color:#000;
+	height: 100px;
+	text-align: center;
+}
+
+.main-menu .menu-item:hover{
+	background-color: #fff;
+	border: 1px solid #03C4EB;
+	transition: 0.3s;
+}
+#footer {
+  background: #111;
+  padding: 10px 0;
+  color: #fff;
+  position:absolute;
+  bottom:0;
+  width: 100%;
+  text-align: center;
+}
+
+#footer .copyright {
+  text-align: center;
+}

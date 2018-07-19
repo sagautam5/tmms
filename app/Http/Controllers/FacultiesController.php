@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Faculty;
 use Illuminate\Http\Request;
 
-class ModuleController extends Controller
+class FacultiesController extends Controller
 {
     /**
      * Display a listing of the resource.
