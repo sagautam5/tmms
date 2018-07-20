@@ -48,6 +48,7 @@
 @section('imports')
     <script src="{{ asset('js/jquery.min.js') }}"></script>
     <script src="{{ asset('js/moment.min.js') }}"></script>
+    <script src="{{ asset('js/bootstrap.min.js') }}"></script>
     <script>
         var base_url = '{{ url('') }}';
 
@@ -65,7 +66,7 @@
     <script src="{{ asset('js/dataTables/vfs_fonts.js') }}"></script>
     <script src="{{ asset('js/dataTables/buttons.html5.min.js') }}"></script>
     <script src="{{ asset('js/dataTables/buttons.print.min.js') }}"></script>
-    
+
 @show()
 </body>
 </html>
