@@ -10,7 +10,7 @@
 @endsection
 
 @section('page-info')
-<h2 class="page-info">Add Module</h2>
+<h2 class="page-info">{{trans('app.Add_New_Module')}}</h2>
 @endsection
 
 @section('content')
@@ -22,7 +22,7 @@
 				
 				<div class="form-group">
 					<div class="col-md-6">
-						<label class="label-control" for="name">Module Name </label>
+						<label class="label-control" for="name">{{trans('app.Module_Name')}}</label>
 						<input id="name" class="form-control" name="name" value="{{old('name')}}">
 						<input name="faculty_id" value="{{$faculty->id}}" hidden>
 						@if ($errors->has('name'))
@@ -34,7 +34,7 @@
 				</div>
 				<div class="form-group">
 					<div class="col-md-6">
-						<button type="submit" class="btn btn-default pull-right"> Add </button>
+						<button type="submit" class="btn btn-default pull-right"> {{trans('app.Add')}} </button>
 					</div>
 					
 				</div>

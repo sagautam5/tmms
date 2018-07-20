@@ -16,6 +16,7 @@ class FacultiesController extends Controller
 
     public function __construct(Faculty $faculty){
         // set the model
+
        $this->model = new Repository($faculty);
     }
     /**
@@ -25,6 +26,7 @@ class FacultiesController extends Controller
      */
     public function index()
     {
+
         // All Faculties
         $faculties = $this->model->with('modules')->get();
 

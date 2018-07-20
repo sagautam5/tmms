@@ -14,10 +14,10 @@
 	<div class="row">
 		<div class="col-md-12 main-menu">
 			<a href="{{URL::to('/teachers')}}">
-				<div class="col-md-5 menu-item">Teachers</div>
+				<div class="col-md-5 menu-item">{{trans('app.Teachers')}}</div>
 			</a>
 			<a href="{{URL::to('/faculties')}}">
-				<div class="col-md-5 menu-item">Faculties</div>
+				<div class="col-md-5 menu-item">{{trans('app.Faculties')}}</div>
 			</a>
 		</div>
 	</div>

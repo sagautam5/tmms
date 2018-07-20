@@ -35,3 +35,13 @@ Route::group(['prefix'=>'faculties/{faculty_id}'], function(){
 });
 
 Route::get('modules/{id}/faculty','ModulesController@getModulesByFaculty');
+
+// Language change
+
+Route::post('/language-selector','LanguageController@selectLanguage');
+Route::post('/language/', array(
+	'before' => 'csrf',
+	'as' => 'language-selector',
+	'uses' => 'LanguageController@selectLanguage'
+	)
+);
