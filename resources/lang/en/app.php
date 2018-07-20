@@ -38,9 +38,11 @@
 		'Add_Faculty' => 'Add Faculty',
 		'Add' => 'Add',
 		'Add_New_Module' => 'Add New Module',
+		'Add_Module' => 'Add Module',
 		'Module_Name' => 'Module Name',
 		'Faculty_Name' => 'Faculty Name',
 		'Nepali' => "नेपाली ",
-		'Action' => 'Action'
+		'Action' => 'Action',
+		'Edit_Faculty' => 'Edit Faculty'
 	];
 ?>

@@ -182,7 +182,7 @@
 
 	                	var select = $('select[name=module_id]');
 	                	select.empty();
-	                	select.append('<option value=""> Select Module</option>');
+	                	select.append('<option value=""> {{trans('app.Select_Module')}}</option>');
 	                    $.each(data,function(key, value) {
 	                		select.append('<option value=' + value.id + '>' + value.name + '</option>');
 	            		});
@@ -192,7 +192,7 @@
             else{
             	var select = $('select[name=module_id]');
             	select.empty();
-            	select.append('<option value=""> Select Modules</option>')
+            	select.append('<option value=""> {{trans('app.Select_Module')}}</option>')
             }
        	 });
     });
