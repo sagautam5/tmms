@@ -16,6 +16,7 @@
     
     <!-- <link rel="stylesheet" href="{{ asset('css/font-awesome.css') }}"> -->
     <link href="{{ asset('css/jquery.dataTables.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/buttons.dataTables.min.css') }}" rel="stylesheet">
 @show()
 </head>
 <body>
@@ -56,7 +57,15 @@
 
     </script>
     <script src="{{ asset('js/app.js') }}"></script>
-    <script src="{{ asset('js/jquery.dataTables.min.js') }}"></script>
+    <script src="{{ asset('js/dataTables/jquery.dataTables.min.js') }}"></script>
+    <script src="{{ asset('js/dataTables/dataTables.buttons.min.js') }}"></script>
+    <script src="{{ asset('js/dataTables/buttons.flash.min.js') }}"></script>
+    <script src="{{ asset('js/dataTables/jszip.min.js') }}"></script>
+    <script src="{{ asset('js/dataTables/pdfmake.min.js') }}"></script>
+    <script src="{{ asset('js/dataTables/vfs_fonts.js') }}"></script>
+    <script src="{{ asset('js/dataTables/buttons.html5.min.js') }}"></script>
+    <script src="{{ asset('js/dataTables/buttons.print.min.js') }}"></script>
+    
 @show()
 </body>
 </html>

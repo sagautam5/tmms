@@ -72,7 +72,12 @@
 @parent
 <script type="text/javascript">
 	$(document).ready( function () {
-    	$('#teacher-table').DataTable();
+    	$('#teacher-table').DataTable({
+    		dom: 'Bfrtip',
+    		buttons:[
+    			'csv', 'excel','pdf'
+    		]
+    	});
 	});
 </script>
 @endsection

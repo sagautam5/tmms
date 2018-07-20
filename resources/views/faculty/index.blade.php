@@ -69,7 +69,29 @@
 @parent
 <script type="text/javascript">
 	$(document).ready( function () {
-    	$('#faculty-table').DataTable();
+    	$('#faculty-table').DataTable({
+    		dom: 'Bfrtip',
+    		buttons:[
+    			{
+    				extend:'csv',
+    				exportOptions:{
+    					columns: [0,1,2]
+    				}
+    			},
+    			{
+    				extend:'excel',
+    				exportOptions:{
+    					columns: [0,1,2]
+    				}
+    			},
+    			{
+    				extend: 'pdf',
+    				exportOptions:{
+    					columns: [0,1,2]
+    				}
+    			}
+    		]
+    	});
 	});
 </script>
 @endsection
