@@ -10,11 +10,11 @@
 
 <!-- jQuery library -->
 @section('assets')
-    <link rel="stylesheet" href="{{ asset('css/font-awesome.css') }}">
     <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     
+    <!-- <link rel="stylesheet" href="{{ asset('css/font-awesome.css') }}"> -->
     <link href="{{ asset('css/jquery.dataTables.min.css') }}" rel="stylesheet">
 @show()
 </head>

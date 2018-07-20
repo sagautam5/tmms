@@ -23,11 +23,12 @@ class CreateTeachersTable extends Migration
             $table->integer('nationality_id')->unsigned();
             $table->string('date_of_birth');
             $table->integer('faculty_id')->unsigned();
-            $table->json('modules');
+            $table->integer('module_id')->unsigned();
             $table->timestamps();
 
             $table->foreign('nationality_id')->references('id')->on('nationalities');
             $table->foreign('faculty_id')->references('id')->on('faculties');
+            $table->foreign('module_id')->references('id')->on('modules');
         });
     }
 

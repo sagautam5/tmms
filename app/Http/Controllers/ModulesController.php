@@ -6,6 +6,8 @@ use App\Module;
 use App\Faculty;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\ModuleRequest;
+
 
 use App\Repositories\Repository;
 
@@ -24,10 +26,10 @@ class ModulesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($faculty_id)
     {
-        //
-    }
+
+    } 
 
     /**
      * Show the form for creating a new resource.
@@ -46,7 +48,7 @@ class ModulesController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ModuleRequest $request)
     {
         if($this->model->create($request->all()))
         {
@@ -101,5 +103,11 @@ class ModulesController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function getModulesByFaculty($id)
+    {
+        $modules = Faculty::find($id)->modules()->select('id','name')->get()->toArray();
+        return response()->json($modules);
     }
 }

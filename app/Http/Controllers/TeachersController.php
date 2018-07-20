@@ -7,6 +7,8 @@ Use App\Faculty;
 Use App\Nationality;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\TeacherRequest;
+
 
 use App\Repositories\Repository;
 
@@ -29,6 +31,8 @@ class TeachersController extends Controller
     {
         // All Teachers 
         $teachers = $this->model->all();
+
+        return view('teacher.index',compact('teachers'));
     }
 
     /**
@@ -50,9 +54,19 @@ class TeachersController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(TeacherRequest $request)
     {
-        //
+        // store new faculty to database
+        if($this->model->create($request->all()))
+        {
+            return redirect()->to('/teachers')->with('alert-success','Teacher added successfully !');
+        }
+
+        else
+        {
+            return redirect()->back()->with('alert-danger','Something went wrong !');
+        }
+
     }
 
     /**

@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class FacultyRequest extends FormRequest
+class ModuleRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -36,7 +36,7 @@ class FacultyRequest extends FormRequest
     public function messages()
     {
         return [
-            'name.required' => 'faculty name is required',
+            'name.required' => 'module name is required',
         ];
     }
 }

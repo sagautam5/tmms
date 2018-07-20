@@ -49,7 +49,6 @@
 							<td>
 								<div><a href="{{URL::to('faculties/'.$faculty->id.'/modules/create')}}"><i class="fa fa-pencil-square-o"> Add Module</i></a></div>
 								<div><a href="{{URL::to('faculties/'.$faculty->id.'/edit')}}"><i class="fa fa-pencil-square-o"> Edit</i></a></div>
-								<div><a href="{{URL::to('faculties/')}}"><i class="fa fa-trash"> Delete</i></a></div>
 							</td>
 						</tr>
 						@endforeach

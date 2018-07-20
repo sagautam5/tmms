@@ -33,3 +33,5 @@ Route::group(['prefix'=>'faculties/{faculty_id}'], function(){
 		'except' => ['show','intex']
 	]);
 });
+
+Route::get('modules/{id}/faculty','ModulesController@getModulesByFaculty');
